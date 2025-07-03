@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: gestao-escolar-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    # O comando abaixo sobrescreve o CMD do Dockerfile para incluir --reload,
+    # ideal para desenvolvimento. Remova ou comente a linha para produção.
+    #command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
